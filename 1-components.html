@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- My Styles -->
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body class="bg-dark text-light">
+    <div id="app">
+        <header class="pb-5 text-center display-4 pt-4">
+            {{ title }}
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <basic-comp></basic-comp>
+                    <!-- 
+                    '<div class="text-dark text-center card">\
+                        <div class="card-header">{{ name }}</div>\
+                        <div class="card-body">{{ count }}</div>\
+                        <div class="card-footer" @click="count++">Click me!</div>\
+                    </div>'
+                     -->
+                </div>
+                <div class="col">
+                    <basic-comp></basic-comp>
+                </div>
+                <div class="col">
+                    <basic-comp></basic-comp>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- JQuery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- Font-Awesome -->
+    <script src="js/all.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Vue Js -->
+    <script src="js/vue.js"></script>
+
+    <!-- My App -->
+    <script>
+    
+    // Declearing Basic Component.
+    Vue.component('basic-comp', {
+        data: function () {
+            return {
+                name: "Mostafa Yasin",
+                count: 0
+            }
+        },
+        template: '<div class="text-dark text-center card">\
+            <div class="card-header">{{ name }}</div>\
+            <div class="card-body">{{ count }}</div>\
+            <div class="card-footer" @click="count++">Click me!</div>\
+            </div>'
+    });
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            title: "Components"
+        }
+    });
+
+    </script>
+</body>
+</html>
